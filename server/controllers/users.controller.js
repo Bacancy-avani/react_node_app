@@ -25,7 +25,7 @@ exports.list = async function(req, res) {
   let user;
 
   try {
-    user = await users.findAll({where: { deletedAt: { [db.Sequelize.Op.eq]: null } }});
+    user = await users.findAll({ where: { deletedAt: { [db.Sequelize.Op.eq]: null } }});
   } catch (err) {
     return res.status(500).json({
       status: false,
